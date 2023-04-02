@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My weather app</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid p-3 mb-2 ">
+      <a class="navbar-brand" href="#">Weather app</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        </ul>
+        <form class="d-flex" role="search">
+          <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class='container'>
+    <h1 class='my-4 text-center '>Weather for <span id="cityName"></span></h1>
+    <div class="d-flex flex-row d-flex justify-content-around mt-5">
+      <div class="p-2 text-white bg-dark p-2 border flex-fill ">
+        <h4 class='text-center'>Tempratures</h4>
+        <h2 class="text-center"><span id="temp2"></span>&#8451;</h2>
+        <h4>Temprature is <span id="temp"></span></h4>
+        <h4>Min Temprature is <span id="min_temp"></span></h4>
+        <h4>Max temprature is <span id="max_temp"></span></h4>
+      </div>
+      <div class="p-2  text-white bg-dark p-2 border flex-fill text-center">
+        <h4 class='text-center'>Humidity Info</h4>
+
+        <h1 class="text-center"><span id="humidity2"></span>%</h1>
+        <h4 class="text-sm-start">sunset is <span id="sunset"></span></h4>
+        <h4 class="text-sm-start">Feels like is <span id="feels_like"></span></h4>
+        <h4 class="text-sm-start">Humidity is <span id="humidity"></span></h4>
+
+      </div>
+      <div class="p-2 text-white bg-dark p-2 border flex-fill text-center">
+        <h4 class='text-center'>Wind Info</h4>
+        <h1 class="text-center"><span id="wind_speed2"></span>km/hr</h1>
+        <h4 class="text-sm-start">wind speed is <span id="wind_speed"></span></h4>
+        <h4 class="text-sm-start">wind degree is <span id="wind_degrees"></span></h4>
+        <h4 class="text-sm-start">Sunrise is <span id="sunrise"></span></h4>
+
+      </div>
+    </div>
+    <h2 class='text-center mt-5'>Weather of other common places</h2>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Feels_like</th>
+            <th scope="col">Humidity</th>
+            <th scope="col">Max_temp</th>
+            <th scope="col">Min_temp</th>
+            <th scope="col">Sunrise</th>
+            <th scope="col">Sunset</th>
+            <th scope="col">Temp</th>
+            <th scope="col">Wind_degrees</th>
+            <th scope="col">Wind_speed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class='text-start'>shanghai</th>
+
+            <td><span id="feels_like3"></span></td>
+            <td><span id="humidity3"></span></td>
+            <td><span id="max_temp3"></span></td>
+            <td><span id="min_temp3"></span></td>
+            <td><span id="sunrise3"></span></td>
+            <td><span id="sunset3"></span></td>
+            <td><span id="temp3"></span></td>
+            <td><span id="wind_degrees3"></span></td>
+            <td><span id="wind_speed3"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">boston</th>
+
+            <td><span id="feels_like4"></span></td>
+            <td><span id="humidity4"></span></td>
+            <td><span id="max_temp4"></span></td>
+            <td><span id="min_temp4"></span></td>
+            <td><span id="sunrise4"></span></td>
+            <td><span id="sunset4"></span></td>
+            <td><span id="temp4"></span></td>
+            <td><span id="wind_degrees4"></span></td>
+            <td><span id="wind_speed4"></span></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">lucknow</th>
+
+            <td><span id="feels_like5"></span></td>
+            <td><span id="humidity5"></span></td>
+            <td><span id="max_temp5"></span></td>
+            <td><span id="min_temp5"></span></td>
+            <td><span id="sunrise5"></span></td>
+            <td><span id="sunset5"></span></td>
+            <td><span id="temp5"></span></td>
+            <td><span id="wind_degrees5"></span></td>
+            <td><span id="wind_speed5"></span></td>
+            
+          </tr>
+          <tr>
+            <th scope="row">kolkata</th>
+            <td><span id="feels_like6"></span></td>
+            <td><span id="humidity6"></span></td>
+            <td><span id="max_temp6"></span></td>
+            <td><span id="min_temp6"></span></td>
+            <td><span id="sunrise6"></span></td>
+            <td><span id="sunset6"></span></td>
+            <td><span id="temp6"></span></td>
+            <td><span id="wind_degrees6"></span></td>
+            <td><span id="wind_speed6"></span></td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+  <script>
+    const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "6fe7eae4f0msh04b8cc1951fa7b7p112304jsn2495a12c5df9",
+    "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
+  },
+};
+
+const getWeather = (city) => {
+  cityName.innerHTML = city;
+  fetch(
+    "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=" + city,
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      temp.innerHTML = response.temp;
+      temp2.innerHTML = response.temp;
+      feels_like.innerHTML = response.feels_like;
+      humidity.innerHTML = response.humidity;
+      humidity2.innerHTML = response.humidity;
+      min_temp.innerHTML = response.min_temp;
+      max_temp.innerHTML = response.max_temp;
+      wind_speed.innerHTML = response.wind_speed;
+      wind_speed2.innerHTML = response.wind_speed;
+      wind_degrees.innerHTML = response.wind_degrees;
+      sunrise.innerHTML = response.sunrise;
+      sunset.innerHTML = response.sunset;
+    })
+
+    .catch((err) => console.error(err));
+};
+
+fetch(
+    "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=shanghai",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      temp3.innerHTML = response.temp;
+      feels_like3.innerHTML = response.feels_like;
+      humidity3.innerHTML = response.humidity;
+      min_temp3.innerHTML = response.min_temp;
+      max_temp3.innerHTML = response.max_temp;
+      wind_speed3.innerHTML = response.wind_speed;
+      wind_degrees3.innerHTML = response.wind_degrees;
+      sunrise3.innerHTML = response.sunrise;
+      sunset3.innerHTML = response.sunset;
+    })
+
+    .catch((err) => console.error(err));
+
+
+	fetch(
+    "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=boston",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      temp4.innerHTML = response.temp;
+      feels_like4.innerHTML = response.feels_like;
+      humidity4.innerHTML = response.humidity;
+      min_temp4.innerHTML = response.min_temp;
+      max_temp4.innerHTML = response.max_temp;
+      wind_speed4.innerHTML = response.wind_speed;
+      wind_degrees4.innerHTML = response.wind_degrees;
+      sunrise4.innerHTML = response.sunrise;
+      sunset4.innerHTML = response.sunset;
+    })
+
+    .catch((err) => console.error(err));
+
+	fetch(
+		"https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=lucknow",
+		options
+	  )
+		.then((response) => response.json())
+		.then((response) => {
+		  console.log(response);
+		  temp5.innerHTML = response.temp;
+		  feels_like5.innerHTML = response.feels_like;
+		  humidity5.innerHTML = response.humidity;
+		  min_temp5.innerHTML = response.min_temp;
+		  max_temp5.innerHTML = response.max_temp;
+		  wind_speed5.innerHTML = response.wind_speed;
+		  wind_degrees5.innerHTML = response.wind_degrees;
+		  sunrise5.innerHTML = response.sunrise;
+		  sunset5.innerHTML = response.sunset;
+		})
+	
+		.catch((err) => console.error(err));
+
+		fetch(
+			"https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=kolkata",
+			options
+		  )
+			.then((response) => response.json())
+			.then((response) => {
+			  console.log(response);
+			  temp6.innerHTML = response.temp;
+			  feels_like6.innerHTML = response.feels_like;
+			  humidity6.innerHTML = response.humidity;
+			  min_temp6.innerHTML = response.min_temp;
+			  max_temp6.innerHTML = response.max_temp;
+			  wind_speed6.innerHTML = response.wind_speed;
+			  wind_degrees6.innerHTML = response.wind_degrees;
+			  sunrise6.innerHTML = response.sunrise;
+			  sunset6.innerHTML = response.sunset;
+			})
+		
+			.catch((err) => console.error(err));
+
+
+
+submit.addEventListener("click", (e) => {
+  e.preventDefault();
+  // yeh jo hamne uppar daala hain ise daalne se page pe reload nhi karega
+  getWeather(city.value);
+});
+
+getWeather("Delhi");
+
+
+  </script>
+</body>
+
+</html>
